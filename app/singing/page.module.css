@@ -524,12 +524,19 @@
 
 @media (max-width: 900px) {
   .heroSection {
-    padding-top: 4.5rem;
+    padding: 4rem 1.6rem 3rem;
+  }
+
+  .introSection,
+  .stylesSection,
+  .quoteSection {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
   }
 
   .cardGrid {
     grid-template-columns: 1fr;
-    max-width: 520px;
+    max-width: 540px;
     margin: 0 auto;
   }
 
@@ -546,45 +553,113 @@
 }
 
 @media (max-width: 620px) {
-  .heroSection,
-  .introSection,
-  .stylesSection,
-  .quoteSection {
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
+  .heroSection {
+    padding: 3.2rem 1.15rem 2.4rem;
   }
 
-@media (max-width: 620px) {
-  .heroSection,
-  .introSection,
-  .stylesSection,
+  .introSection {
+    padding: 0.5rem 1.15rem 3.6rem;
+  }
+
+  .stylesSection {
+    padding: 0 1.15rem 4rem;
+  }
+
   .quoteSection {
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
+    padding: 0 1.15rem 4.5rem;
   }
 
   .title {
-    font-size: clamp(4rem, 22vw, 5.6rem);
-    line-height: 1.08;
-    margin-bottom: 1.5rem;
+    font-size: clamp(3.8rem, 21vw, 5.3rem);
+    line-height: 1.04;
+    margin-bottom: 1.25rem;
   }
 
   .subtitle {
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.68;
   }
 
   .introCard {
-    border-radius: 1.6rem;
+    padding: 1.55rem;
+    border-radius: 1.55rem;
+  }
+
+  .introCard p {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .introOrnament {
+    right: 1.25rem;
+    top: -1rem;
+    transform: scale(0.9);
+  }
+
+  .sectionHeading {
+    margin-bottom: 1.8rem;
+  }
+
+  .sectionHeading h2 {
+    font-size: clamp(2.15rem, 11vw, 3rem);
   }
 
   .styleCard {
     min-height: auto;
+    padding: 1.15rem;
+    border-radius: 1.55rem;
   }
 
-  .heroDecorOne,
-  .heroDecorTwo {
-    opacity: 0.45;
+  .cardVisual {
+    height: 160px;
+    margin-bottom: 1rem;
+  }
+
+  .rockVisual,
+  .classicalVisual,
+  .theatreVisual {
+    transform: scale(0.86);
+  }
+
+  .rockVisual {
+    transform: scale(0.86) rotate(-12deg);
+  }
+
+  .styleCard h3 {
+    font-size: 1.42rem;
+  }
+
+  .styleCard p {
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  .quoteSection blockquote {
+    font-size: clamp(1.45rem, 8vw, 2.15rem);
   }
 }
+
+@media (max-width: 420px) {
+  .title {
+    font-size: clamp(3.35rem, 22vw, 4.55rem);
+  }
+
+  .kicker {
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+  }
+
+  .cardVisual {
+    height: 145px;
+  }
+
+  .rockVisual,
+  .classicalVisual,
+  .theatreVisual {
+    transform: scale(0.78);
+  }
+
+  .rockVisual {
+    transform: scale(0.78) rotate(-12deg);
+  }
 }

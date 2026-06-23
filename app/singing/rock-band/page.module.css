@@ -388,19 +388,39 @@
 
 @media (max-width: 900px) {
   .heroSection {
-    padding-top: 4rem;
+    padding: 4rem 1.6rem 4rem;
+  }
+
+  .aboutSection,
+  .performancesSection,
+  .lessonsSection,
+  .tipsSection {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
   }
 
   .videoGrid,
   .lessonGrid {
     grid-template-columns: 1fr;
+    max-width: 620px;
+    margin: 0 auto;
   }
 
   .lessonCard,
   .lessonCard:nth-child(1),
   .lessonCard:nth-child(2),
-  .lessonCard:nth-child(3) {
+  .lessonCard:nth-child(3),
+  .videoCard,
+  .videoCard:nth-child(1),
+  .videoCard:nth-child(2),
+  .videoCard:nth-child(3),
+  .videoCard:nth-child(4) {
     transform: none;
+  }
+
+  .lessonCard:hover,
+  .videoCard:hover {
+    transform: translateY(-4px);
   }
 
   .heroImageWrap {
@@ -409,39 +429,106 @@
 }
 
 @media (max-width: 620px) {
-  .heroSection,
+  .heroSection {
+    padding: 3.2rem 1.15rem 3.5rem;
+  }
+
   .aboutSection,
   .performancesSection,
   .lessonsSection,
   .tipsSection {
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
+    padding: 0 1.15rem 4rem;
   }
 
   .heroTitle {
-    font-size: clamp(4rem, 18vw, 5.8rem);
-    line-height: 1.05;
-    margin-bottom: 1.8rem;
+    font-size: clamp(3.6rem, 20vw, 5.5rem);
+    line-height: 1.04;
+    margin-bottom: 1.65rem;
   }
 
   .heroImageWrap {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 16 / 10;
+    border-radius: 1.35rem;
+    transform: none;
+  }
+
+  .heroImageWrap::before {
+    inset: 0.65rem;
+    border-radius: 0.95rem;
+  }
+
+  .sectionHeader {
+    margin-bottom: 1.45rem;
   }
 
   .sectionHeader h2 {
-    font-size: 2.35rem;
+    font-size: clamp(2.05rem, 10vw, 2.75rem);
   }
 
   .aboutCard,
   .tipsCard {
-    border-radius: 1.55rem;
+    padding: 1.55rem;
+    border-radius: 1.5rem;
   }
 
-  .videoCard,
-  .videoCard:nth-child(1),
-  .videoCard:nth-child(2),
-  .videoCard:nth-child(3),
-  .videoCard:nth-child(4) {
-    transform: none;
+  .aboutCard::before {
+    right: 1.4rem;
+    width: 4.8rem;
+  }
+
+  .aboutCard p,
+  .tipsIntro,
+  .lessonCard p,
+  .tipItem p {
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
+
+  .videoCard {
+    padding: 0.8rem;
+    border-radius: 1.4rem;
+  }
+
+  .videoFrame {
+    border-radius: 1rem;
+  }
+
+  .videoFrame::before {
+    border-radius: 1rem;
+  }
+
+  .videoCard h3 {
+    font-size: 1.25rem;
+  }
+
+  .lessonCard {
+    min-height: auto;
+    padding: 1.35rem;
+    border-radius: 1.45rem;
+  }
+
+  .lessonCard h3 {
+    font-size: 1.5rem;
+  }
+
+  .tipItem {
+    padding: 1.1rem;
+    border-radius: 1.15rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .heroTitle {
+    font-size: clamp(3.1rem, 21vw, 4.65rem);
+  }
+
+  .kicker,
+  .sectionKicker {
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+  }
+
+  .heroImageWrap {
+    aspect-ratio: 4 / 3;
   }
 }
