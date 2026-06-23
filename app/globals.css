@@ -87,6 +87,7 @@ a {
 .dropdown-label {
   border: none;
   background: transparent;
+  appearance: none;
 }
 
 .navbar-links > a:hover,
@@ -219,6 +220,21 @@ a {
     font-size: 0.92rem;
     padding: 0.7rem 0.85rem;
   }
+
+  /* Stops sticky mobile hover from keeping dropdowns open */
+  .dropdown:hover .dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(0.25rem);
+  }
+
+  .dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 520px) {
@@ -240,5 +256,9 @@ a {
     top: 6.35rem;
     left: 0.85rem;
     right: 0.85rem;
+  }
+
+  .dropdown-menu a {
+    font-size: 0.86rem;
   }
 }
