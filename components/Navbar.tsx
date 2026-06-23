@@ -1,21 +1,56 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const navbarRef = useRef<HTMLElement | null>(null);
+  const pathname = usePathname();
 
   function toggleDropdown(name: string) {
-    setOpenDropdown(openDropdown === name ? null : name);
+    setOpenDropdown((current) => (current === name ? null : name));
   }
 
   function closeDropdown() {
     setOpenDropdown(null);
   }
 
+  useEffect(() => {
+    closeDropdown();
+  }, [pathname]);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent | TouchEvent) {
+      if (
+        navbarRef.current &&
+        event.target instanceof Node &&
+        !navbarRef.current.contains(event.target)
+      ) {
+        closeDropdown();
+      }
+    }
+
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        closeDropdown();
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
   return (
-    <header className="navbar">
+    <header className="navbar" ref={navbarRef}>
       <Link href="/" className="navbar-logo" onClick={closeDropdown}>
         Zainab Alam
       </Link>
@@ -27,6 +62,7 @@ export default function Navbar() {
             className="dropdown-label"
             onClick={() => toggleDropdown("singing")}
             aria-expanded={openDropdown === "singing"}
+            aria-label="Open singing menu"
           >
             Singing
           </button>
@@ -50,6 +86,7 @@ export default function Navbar() {
             className="dropdown-label"
             onClick={() => toggleDropdown("podcasting")}
             aria-expanded={openDropdown === "podcasting"}
+            aria-label="Open podcasting menu"
           >
             Podcasting
           </button>
