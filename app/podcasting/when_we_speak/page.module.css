@@ -1,0 +1,652 @@
+@import url("https://fonts.googleapis.com/css2?family=Average&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Sacramento&display=swap");
+
+.page {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(246, 211, 101, 0.28), transparent 28rem),
+    radial-gradient(circle at 92% 12%, rgba(233, 138, 138, 0.16), transparent 30rem),
+    radial-gradient(circle at 50% 80%, rgba(245, 184, 149, 0.18), transparent 34rem),
+    #fff7e8;
+  color: #333333;
+}
+
+/* HERO */
+
+.heroSection {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 5rem 2rem 4rem;
+}
+
+.heroContent {
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: 4rem;
+  align-items: center;
+  animation: fadeUp 0.75s ease both;
+}
+
+.heroText {
+  max-width: 680px;
+}
+
+.kicker {
+  margin: 0 0 0.8rem;
+  color: #9f6a5f;
+  font-family: "Average", serif;
+  font-size: 0.84rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  margin: 0 0 1.2rem;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3.4rem, 8vw, 7rem);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  color: #333333;
+}
+
+.heroTitle::after {
+  content: "";
+  display: block;
+  width: 8.4rem;
+  height: 0.55rem;
+  margin-top: 1.1rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f6d365, #f5b895, #e98a8a);
+}
+
+.heroDescription {
+  max-width: 620px;
+  margin: 0;
+  font-family: "Average", serif;
+  font-size: clamp(1.03rem, 1.5vw, 1.22rem);
+  line-height: 1.85;
+  color: rgba(51, 51, 51, 0.82);
+}
+
+.heroImageWrap {
+  position: relative;
+  justify-self: center;
+}
+
+.heroImageCard {
+  position: relative;
+  width: min(100%, 430px);
+  padding: 0.85rem;
+  border: 1.5px solid rgba(245, 184, 149, 0.9);
+  border-radius: 2.2rem;
+  background: rgba(255, 247, 232, 0.72);
+  box-shadow: 0 24px 70px rgba(112, 74, 58, 0.16);
+  transform: rotate(2deg);
+}
+
+.heroImageCard::before {
+  content: "";
+  position: absolute;
+  inset: -1.1rem;
+  z-index: -1;
+  border: 1.5px dashed rgba(233, 138, 138, 0.42);
+  border-radius: 2.7rem;
+  transform: rotate(-4deg);
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1.55rem;
+}
+
+.sunBadge {
+  position: absolute;
+  right: -1.2rem;
+  bottom: 2.4rem;
+  display: grid;
+  place-items: center;
+  width: 7.2rem;
+  height: 7.2rem;
+  border: 1.5px solid rgba(51, 51, 51, 0.12);
+  border-radius: 50%;
+  background: #f6d365;
+  box-shadow: 0 16px 34px rgba(112, 74, 58, 0.15);
+  color: #333333;
+  font-family: "Sacramento", cursive;
+  font-size: 2rem;
+  line-height: 0.9;
+  text-align: center;
+  transform: rotate(-10deg);
+}
+
+/* SHARED */
+
+.sectionHeading {
+  max-width: 760px;
+  margin: 0 auto 2.4rem;
+  text-align: center;
+}
+
+.sectionHeading h2,
+.highlightsCard h2,
+.visitCard h2 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.2rem, 4.5vw, 4.3rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+/* GOALS */
+
+.goalsSection {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3rem 2rem 4.5rem;
+}
+
+.goalsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.goalCard {
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  padding: 2.1rem;
+  border: 1.5px solid rgba(245, 184, 149, 0.88);
+  border-radius: 2rem;
+  background:
+    linear-gradient(135deg, rgba(255, 247, 232, 0.96), rgba(245, 184, 149, 0.18)),
+    #fff7e8;
+  box-shadow: 0 18px 48px rgba(112, 74, 58, 0.1);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.goalCard::after {
+  content: "";
+  position: absolute;
+  right: -4rem;
+  top: -4rem;
+  width: 11rem;
+  height: 11rem;
+  border-radius: 50%;
+  background: rgba(246, 211, 101, 0.36);
+}
+
+.goalCard:hover {
+  transform: translateY(-6px) rotate(-0.5deg);
+  border-color: rgba(233, 138, 138, 0.7);
+  box-shadow: 0 24px 60px rgba(112, 74, 58, 0.15);
+}
+
+.goalNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.1rem;
+  height: 3.1rem;
+  margin-bottom: 1.3rem;
+  border-radius: 50%;
+  background: #f6d365;
+  font-family: "Sacramento", cursive;
+  font-size: 1.8rem;
+  color: #333333;
+}
+
+.goalCard h3 {
+  margin: 0 0 0.9rem;
+  font-family: "Playfair Display", serif;
+  font-size: 2.15rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.goalCard p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-family: "Average", serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(51, 51, 51, 0.8);
+}
+
+/* HIGHLIGHTS */
+
+.highlightsSection {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1rem 2rem 4.5rem;
+}
+
+.highlightsCard {
+  display: grid;
+  grid-template-columns: 0.95fr 1.35fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2.4rem;
+  border: 1.5px solid rgba(245, 184, 149, 0.92);
+  border-radius: 2.2rem;
+  background:
+    radial-gradient(circle at top left, rgba(246, 211, 101, 0.28), transparent 18rem),
+    rgba(255, 247, 232, 0.82);
+  box-shadow: 0 22px 60px rgba(112, 74, 58, 0.12);
+}
+
+.highlightList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.highlightItem {
+  padding: 1.25rem;
+  border: 1px solid rgba(245, 184, 149, 0.82);
+  border-radius: 1.4rem;
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.highlightItem strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.85rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #333333;
+}
+
+.highlightItem span {
+  display: block;
+  font-family: "Average", serif;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  color: rgba(51, 51, 51, 0.76);
+}
+
+/* EPISODES */
+
+.episodesSection {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4.5rem;
+}
+
+.episodeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem;
+}
+
+.episodeCard {
+  min-height: 430px;
+  perspective: 1200px;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.episodeCard:hover .cardInner,
+.episodeCard:focus-within .cardInner {
+  transform: rotateY(180deg) translateY(-4px);
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  border: 1.5px solid rgba(245, 184, 149, 0.9);
+  border-radius: 1.8rem;
+  box-shadow: 0 20px 48px rgba(112, 74, 58, 0.13);
+}
+
+.cardFront {
+  background: rgba(255, 247, 232, 0.88);
+}
+
+.cardBack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  background:
+    radial-gradient(circle at top right, rgba(246, 211, 101, 0.32), transparent 12rem),
+    linear-gradient(135deg, rgba(255, 247, 232, 0.98), rgba(245, 184, 149, 0.26));
+  transform: rotateY(180deg);
+}
+
+.episodeImageWrap {
+  height: 100%;
+  padding: 0.8rem;
+}
+
+.episodeImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 410px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1.25rem;
+  transition: transform 0.35s ease;
+}
+
+.episodeCard:nth-child(1) .episodeImage {
+  object-position: center 35%;
+}
+
+.episodeCard:nth-child(2) .episodeImage {
+  object-position: center 32%;
+}
+
+.episodeCard:nth-child(3) .episodeImage {
+  object-position: center 34%;
+}
+
+.episodeCard:hover .episodeImage {
+  transform: scale(1.035);
+}
+
+.frontText {
+  position: absolute;
+  left: 1.4rem;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(255, 247, 232, 0.8);
+  border-radius: 1.25rem;
+  background: rgba(255, 247, 232, 0.82);
+  backdrop-filter: blur(10px);
+}
+
+.frontText h3 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 1.85rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #333333;
+}
+
+.episodeNumber {
+  flex: 0 0 auto;
+  font-family: "Sacramento", cursive;
+  font-size: 2.2rem;
+  line-height: 0.85;
+  color: #9f6a5f;
+}
+
+.roleBadge {
+  width: fit-content;
+  margin-bottom: 1rem;
+  padding: 0.48rem 0.88rem;
+  border-radius: 999px;
+  background: #f6d365;
+  font-family: "Average", serif;
+  font-size: 0.83rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #333333;
+}
+
+.cardBack h3 {
+  margin: 0 0 0.9rem;
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.cardBack p {
+  margin: 0;
+  font-family: "Average", serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(51, 51, 51, 0.8);
+}
+
+/* VISIT WEBSITE */
+
+.visitSection {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 2rem 6.5rem;
+}
+
+.visitCard {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 2.2rem;
+  border: 1.5px solid rgba(245, 184, 149, 0.95);
+  border-radius: 2.2rem;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(246, 211, 101, 0.32), transparent 16rem),
+    radial-gradient(circle at 85% 80%, rgba(233, 138, 138, 0.14), transparent 18rem),
+    rgba(255, 247, 232, 0.88);
+  box-shadow: 0 22px 60px rgba(112, 74, 58, 0.13);
+  text-align: center;
+}
+
+.visitCard::before {
+  content: "";
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 1.5px dashed rgba(233, 138, 138, 0.45);
+  border-radius: 50%;
+}
+
+.visitCard::after {
+  content: "";
+  position: absolute;
+  right: 2.2rem;
+  bottom: 2rem;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  background: rgba(245, 184, 149, 0.28);
+}
+
+.visitCard h2 {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1rem;
+}
+
+.visitCard p {
+  position: relative;
+  z-index: 1;
+  max-width: 610px;
+  margin: 0 auto 1.8rem;
+  font-family: "Average", serif;
+  font-size: 1.03rem;
+  line-height: 1.7;
+  color: rgba(51, 51, 51, 0.78);
+}
+
+.visitButton {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.15rem;
+  padding: 0.9rem 1.45rem;
+  border: 1.5px solid rgba(51, 51, 51, 0.12);
+  border-radius: 999px;
+  background: #333333;
+  box-shadow: 0 14px 32px rgba(51, 51, 51, 0.15);
+  color: #fff7e8;
+  font-family: "Average", serif;
+  font-size: 1rem;
+  text-decoration: none;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
+}
+
+.visitButton:hover {
+  transform: translateY(-3px);
+  background: #f6d365;
+  color: #333333;
+  box-shadow: 0 18px 38px rgba(112, 74, 58, 0.18);
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 980px) {
+  .heroContent,
+  .highlightsCard {
+    grid-template-columns: 1fr;
+  }
+
+  .heroContent {
+    gap: 3rem;
+  }
+
+  .heroText {
+    max-width: none;
+    text-align: center;
+  }
+
+  .heroTitle::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroDescription {
+    margin: 0 auto;
+  }
+
+  .goalsGrid,
+  .episodeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .episodeCard,
+  .cardInner {
+    min-height: 480px;
+  }
+
+  .episodeImage {
+    min-height: 460px;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroSection,
+  .goalsSection,
+  .highlightsSection,
+  .episodesSection,
+  .visitSection {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+
+  .heroSection {
+    padding-top: 3.5rem;
+  }
+
+  .heroTitle {
+    font-size: clamp(3rem, 17vw, 4.7rem);
+  }
+
+  .heroDescription,
+  .goalCard p,
+  .cardBack p,
+  .visitCard p {
+    font-size: 0.96rem;
+  }
+
+  .heroImageCard {
+    transform: rotate(1deg);
+  }
+
+  .sunBadge {
+    right: -0.4rem;
+    bottom: -1.3rem;
+    width: 6.2rem;
+    height: 6.2rem;
+    font-size: 1.75rem;
+  }
+
+  .goalCard,
+  .highlightsCard,
+  .visitCard {
+    padding: 1.45rem;
+    border-radius: 1.6rem;
+  }
+
+  .highlightList {
+    grid-template-columns: 1fr;
+  }
+
+  .episodeCard,
+  .cardInner {
+    min-height: 430px;
+  }
+
+  .episodeImage {
+    min-height: 410px;
+  }
+
+  .frontText {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .frontText h3 {
+    font-size: 1.55rem;
+  }
+
+  .visitCard::before,
+  .visitCard::after {
+    display: none;
+  }
+}

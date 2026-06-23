@@ -1,65 +1,176 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import styles from "./page.module.css";
+
+const stats = [
+  { label: "Podcast Episodes Produced", value: "8" },
+  { label: "Guests Interviewed", value: "9" },
+  { label: "Live Performances", value: "12+" },
+  { label: "Musical Genres Performed", value: "4" },
+  { label: "Applications Built", value: "1" },
+  { label: "Research Studies Reviewed", value: "24+" },
+];
+
+const featuredWork = [
+  {
+    title: "Singing",
+    subtitle: "Recitals and band gigs capturing energy and emotion",
+    image: "/images/singing.jpg",
+    href: "/singing",
+    imageClass: styles.singingImage,
+  },
+  {
+    title: "Podcasting",
+    subtitle: "Connecting through pure, honest conversation",
+    image: "/images/podcasting.jpg",
+    href: "/podcasting/when_we_speak",
+    imageClass: styles.podcastingImage,
+  },
+  {
+    title: "Speaking",
+    subtitle: "Expressing my own opinion and story using debate and spoken word",
+    image: "/images/speaking.jpg",
+    href: "/speaking",
+    imageClass: styles.speakingImage,
+  },
+  {
+    title: "Web Development",
+    subtitle: "Creating something to benefit my community in this new age of AI",
+    image: "/images/web-development.jpg",
+    href: "/web-development",
+    imageClass: styles.webImage,
+  },
+  {
+    title: "The Teen Vocal Initiative",
+    subtitle: "Exploring self-confidence in teenagers through vocal training",
+    image: "/images/teen-vocal-initiative.jpg",
+    href: "/teen-vocal-initiative",
+    imageClass: styles.vocalImage,
+  },
+];
 
 export default function Home() {
+  const [flippedCards, setFlippedCards] = useState<boolean[]>(
+    new Array(featuredWork.length).fill(false)
+  );
+
+  function toggleCard(index: number) {
+    setFlippedCards((prev) =>
+      prev.map((isFlipped, i) => (i === index ? !isFlipped : isFlipped))
+    );
+  }
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className={styles.page}>
+      <section className={styles.heroSection}>
+        <div className={styles.heroContent}>
+          <div className={styles.heroText}>
+            <p className={styles.kicker}>
+              Singer • Storyteller • Developer • Researcher
+            </p>
+
+            <h1 className={styles.heroTitle}>Zainab Alam</h1>
+
+            <p className={styles.heroIntro}>
+              Hi, I&apos;m Zainab, a multidisciplinary artist living in Silicon
+              Valley. As a young creator, I’m especially passionate about
+              blending forms of music, storytelling, and performance to explore
+              emotion, identity, and community. Whether I’m behind the mic
+              recording a podcast, singing on stage, or coding an application to
+              benefit my community, I see each project as an opportunity to
+              connect with others on a deeper level. For me, creativity isn’t
+              just about expression — it’s about building bridges and creating
+              shared experiences. This site is a home for my work, a space where
+              I can share what I’m building, experimenting with, and learning
+              along the way.
+            </p>
+
+            <div className={styles.heroButtons}>
+              <Link href="/singing" className={styles.primaryButton}>
+                Explore My Work
+              </Link>
+
+              <Link href="/contact" className={styles.secondaryButton}>
+                Contact Me
+              </Link>
+            </div>
+          </div>
+
+          <div className={styles.heroImageCard}>
+            <img
+              src="/images/hero.jpg"
+              alt="Zainab Alam standing outdoors"
+              className={styles.heroImage}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.statsSection}>
+        <div className={styles.sectionHeader}>
+          <p className={styles.sectionKicker}>At a glance</p>
+          <h2 className={styles.sectionTitle}>Creative Snapshot</h2>
+        </div>
+
+        <div className={styles.statsGrid}>
+          {stats.map((stat) => (
+            <div key={stat.label} className={styles.statCard}>
+              <p className={styles.statValue}>{stat.value}</p>
+              <p className={styles.statLabel}>{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.featuredSection}>
+        <div className={styles.sectionHeader}>
+          <p className={styles.sectionKicker}>Featured work</p>
+          <h2 className={styles.sectionTitle}>Explore My Work</h2>
+          <p className={styles.sectionDescription}>
+            Hover over a card to lift it. Click it to reveal the description.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className={styles.cardsGrid}>
+          {featuredWork.map((item, index) => (
+            <div key={item.title} className={styles.cardBlock}>
+              <button
+                type="button"
+                className={`${styles.flipCard} ${
+                  flippedCards[index] ? styles.flipped : ""
+                }`}
+                onClick={() => toggleCard(index)}
+              >
+                <div className={styles.flipCardInner}>
+                  <div className={`${styles.cardFace} ${styles.cardFront}`}>
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className={`${styles.cardImage} ${item.imageClass}`}
+                    />
+
+                    <div className={styles.cardTitleOverlay}>
+                      <h3>{item.title}</h3>
+                    </div>
+                  </div>
+
+                  <div className={`${styles.cardFace} ${styles.cardBack}`}>
+                    <h3>{item.title}</h3>
+                    <p>{item.subtitle}</p>
+                    <span>Click to flip back</span>
+                  </div>
+                </div>
+              </button>
+
+              <Link href={item.href} className={styles.cardButton}>
+                Go to this page
+              </Link>
+            </div>
+          ))}
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }

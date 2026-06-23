@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Average&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Sacramento&display=swap");
+
+.page {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(246, 211, 101, 0.28), transparent 28rem),
+    radial-gradient(circle at 92% 14%, rgba(233, 138, 138, 0.16), transparent 30rem),
+    radial-gradient(circle at 50% 86%, rgba(245, 184, 149, 0.2), transparent 34rem),
+    #fff7e8;
+  color: #333333;
+}
+
+.heroSection {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 5.5rem 2rem 6rem;
+}
+
+.heroCard {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 3rem;
+  border: 1.5px solid rgba(245, 184, 149, 0.95);
+  border-radius: 2.5rem;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(246, 211, 101, 0.34), transparent 17rem),
+    radial-gradient(circle at 88% 78%, rgba(233, 138, 138, 0.13), transparent 18rem),
+    rgba(255, 247, 232, 0.86);
+  box-shadow: 0 24px 70px rgba(112, 74, 58, 0.14);
+  text-align: center;
+  animation: fadeUp 0.75s ease both;
+}
+
+.heroCard::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  width: 5.5rem;
+  height: 5.5rem;
+  border: 1.5px dashed rgba(233, 138, 138, 0.45);
+  border-radius: 50%;
+  transform: rotate(-8deg);
+}
+
+.heroCard::after {
+  content: "";
+  position: absolute;
+  right: 2.3rem;
+  bottom: 2.3rem;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  background: rgba(246, 211, 101, 0.34);
+}
+
+.kicker {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 0.85rem;
+  color: #9f6a5f;
+  font-family: "Average", serif;
+  font-size: 0.84rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.title {
+  position: relative;
+  z-index: 1;
+  max-width: 840px;
+  margin: 0 auto 1.3rem;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3.2rem, 8vw, 7rem);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  color: #333333;
+}
+
+.description {
+  position: relative;
+  z-index: 1;
+  max-width: 690px;
+  margin: 0 auto;
+  font-family: "Average", serif;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.85;
+  color: rgba(51, 51, 51, 0.82);
+}
+
+.divider {
+  position: relative;
+  z-index: 1;
+  width: 8.5rem;
+  height: 0.55rem;
+  margin: 2rem auto 2.6rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f6d365, #f5b895, #e98a8a);
+}
+
+.featuresBlock {
+  position: relative;
+  z-index: 1;
+}
+
+.featuresLabel {
+  margin: 0 0 1.3rem;
+  color: #9f6a5f;
+  font-family: "Average", serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.featureCard {
+  min-height: 160px;
+  padding: 1.35rem 1rem;
+  border: 1.5px solid rgba(245, 184, 149, 0.9);
+  border-radius: 1.6rem;
+  background:
+    linear-gradient(135deg, rgba(255, 247, 232, 0.95), rgba(245, 184, 149, 0.22)),
+    #fff7e8;
+  box-shadow: 0 16px 38px rgba(112, 74, 58, 0.1);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-6px) rotate(-1deg);
+  border-color: rgba(233, 138, 138, 0.72);
+  box-shadow: 0 22px 48px rgba(112, 74, 58, 0.15);
+}
+
+.featureNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  background: #f6d365;
+  color: #333333;
+  font-family: "Sacramento", cursive;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.featureCard h2 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 1.65rem;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #333333;
+}
+
+.comingSoonBadge {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.6rem;
+  padding: 0.95rem 1.55rem;
+  border: 1.5px solid rgba(51, 51, 51, 0.1);
+  border-radius: 999px;
+  background: #333333;
+  box-shadow: 0 14px 32px rgba(51, 51, 51, 0.14);
+  color: #fff7e8;
+  font-family: "Average", serif;
+  font-size: 1rem;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .featuresGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .heroCard {
+    padding: 3.4rem 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroSection {
+    padding: 3.5rem 1.1rem 5rem;
+  }
+
+  .heroCard {
+    padding: 2.6rem 1.35rem;
+    border-radius: 1.8rem;
+  }
+
+  .heroCard::before,
+  .heroCard::after {
+    display: none;
+  }
+
+  .title {
+    font-size: clamp(3rem, 16vw, 4.7rem);
+  }
+
+  .description {
+    font-size: 0.98rem;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featureCard {
+    min-height: 130px;
+  }
+
+  .featureCard h2 {
+    font-size: 1.55rem;
+  }
+}

@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Average&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Sacramento&display=swap");
+
+.page {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(246, 211, 101, 0.28), transparent 34rem),
+    radial-gradient(circle at top right, rgba(233, 138, 138, 0.16), transparent 30rem),
+    #fff7e8;
+  color: #333333;
+}
+
+/* HERO */
+
+.heroSection {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 4.8rem 2rem 3.8rem;
+}
+
+.heroContent {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  animation: fadeUp 0.8s ease both;
+}
+
+.kicker,
+.sectionKicker {
+  margin: 0 0 0.8rem;
+  color: #9f6a5f;
+  font-family: "Average", Georgia, serif;
+  font-size: 0.86rem;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  margin: 0 auto 1.5rem;
+  color: #333333;
+  font-family: "Sacramento", cursive;
+  font-size: clamp(4.2rem, 10vw, 8rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.heroIntro {
+  max-width: 760px;
+  margin: 0 auto;
+  color: rgba(51, 51, 51, 0.76);
+  font-family: "Average", Georgia, serif;
+  font-size: clamp(1.04rem, 2vw, 1.24rem);
+  line-height: 1.8;
+}
+
+/* SHARED SECTIONS */
+
+.repertoireSection,
+.favoritesSection,
+.lessonsSection {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
+
+.sectionHeader {
+  margin-bottom: 1.9rem;
+  text-align: center;
+}
+
+.sectionHeader h2 {
+  margin: 0;
+  color: #333333;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.35rem, 5vw, 3.75rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+/* REPERTOIRE */
+
+.repertoireGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.4rem;
+}
+
+.repertoireCard {
+  position: relative;
+  padding: 1.55rem;
+  border: 1.5px solid rgba(245, 184, 149, 0.95);
+  border-radius: 1.9rem;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 241, 0.96), rgba(245, 184, 149, 0.16)),
+    #fffaf1;
+  box-shadow: 0 18px 42px rgba(108, 72, 57, 0.1);
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease,
+    border-color 0.24s ease;
+}
+
+.repertoireCard:nth-child(1) {
+  transform: rotate(-0.8deg);
+}
+
+.repertoireCard:nth-child(2) {
+  transform: translateY(0.7rem);
+}
+
+.repertoireCard:nth-child(3) {
+  transform: rotate(0.8deg);
+}
+
+.repertoireCard:hover {
+  transform: translateY(-5px) rotate(0deg);
+  border-color: rgba(233, 138, 138, 0.85);
+  box-shadow: 0 24px 54px rgba(108, 72, 57, 0.15);
+}
+
+.repertoireCard h3 {
+  margin: 0 0 1rem;
+  color: #9f6a5f;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.04em;
+}
+
+.repertoireCard ul {
+  display: grid;
+  gap: 0.78rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.repertoireCard li {
+  color: rgba(51, 51, 51, 0.78);
+  font-family: "Average", Georgia, serif;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.repertoireCard em {
+  color: #333333;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.repertoireCard span {
+  color: rgba(51, 51, 51, 0.68);
+}
+
+/* FAVORITE VIDEOS */
+
+.videoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.videoCard {
+  padding: 1rem;
+  border: 1.5px solid rgba(245, 184, 149, 0.9);
+  border-radius: 1.8rem;
+  background: rgba(255, 250, 241, 0.86);
+  box-shadow: 0 18px 42px rgba(108, 72, 57, 0.1);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.videoCard:nth-child(1) {
+  transform: rotate(-0.7deg);
+}
+
+.videoCard:nth-child(2) {
+  transform: translateY(0.5rem);
+}
+
+.videoCard:nth-child(3) {
+  transform: rotate(0.7deg);
+}
+
+.videoCard:hover {
+  transform: translateY(-5px) rotate(0deg);
+  border-color: rgba(233, 138, 138, 0.85);
+  box-shadow: 0 24px 54px rgba(108, 72, 57, 0.15);
+}
+
+.videoFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(circle at top left, rgba(246, 211, 101, 0.24), transparent 12rem),
+    #333333;
+}
+
+.videoFrame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border: 1px solid rgba(255, 247, 232, 0.55);
+  border-radius: 1.25rem;
+  pointer-events: none;
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+.videoCard h3 {
+  margin: 0.95rem 0 0.2rem;
+  color: #333333;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+.videoCard h3 em {
+  font-style: italic;
+}
+
+/* LESSONS */
+
+.lessonGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.lessonCard {
+  position: relative;
+  min-height: 360px;
+  padding: 1.6rem;
+  border: 1.5px solid rgba(245, 184, 149, 0.95);
+  border-radius: 1.8rem;
+  background:
+    radial-gradient(circle at top left, rgba(246, 211, 101, 0.34), transparent 9rem),
+    radial-gradient(circle at bottom right, rgba(233, 138, 138, 0.15), transparent 9rem),
+    #fffaf1;
+  box-shadow: 0 16px 38px rgba(108, 72, 57, 0.09);
+  overflow: hidden;
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease,
+    border-color 0.24s ease;
+}
+
+.lessonCard:nth-child(1) {
+  transform: rotate(-1deg);
+}
+
+.lessonCard:nth-child(2) {
+  transform: translateY(0.7rem);
+}
+
+.lessonCard:nth-child(3) {
+  transform: rotate(1deg);
+}
+
+.lessonCard:hover {
+  transform: translateY(-5px) rotate(0deg);
+  border-color: rgba(233, 138, 138, 0.8);
+  box-shadow: 0 22px 50px rgba(108, 72, 57, 0.14);
+}
+
+.lessonDecoration {
+  display: flex;
+  gap: 0.45rem;
+  margin-bottom: 1.5rem;
+}
+
+.lessonDecoration span {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 999px;
+  background: #f6d365;
+}
+
+.lessonDecoration span:nth-child(2) {
+  background: #f5b895;
+}
+
+.lessonDecoration span:nth-child(3) {
+  background: #e98a8a;
+}
+
+.lessonCard h3 {
+  margin: 0 0 0.9rem;
+  color: #333333;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.lessonCard ul {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.lessonCard li {
+  color: rgba(51, 51, 51, 0.74);
+  font-family: "Average", Georgia, serif;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.lessonCard li::marker {
+  color: #e98a8a;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 980px) {
+  .repertoireGrid,
+  .videoGrid,
+  .lessonGrid {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .repertoireCard,
+  .repertoireCard:nth-child(1),
+  .repertoireCard:nth-child(2),
+  .repertoireCard:nth-child(3),
+  .videoCard,
+  .videoCard:nth-child(1),
+  .videoCard:nth-child(2),
+  .videoCard:nth-child(3),
+  .lessonCard,
+  .lessonCard:nth-child(1),
+  .lessonCard:nth-child(2),
+  .lessonCard:nth-child(3) {
+    transform: none;
+  }
+
+  .lessonCard {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .heroSection,
+  .repertoireSection,
+  .favoritesSection,
+  .lessonsSection {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .heroSection {
+    padding-top: 4rem;
+  }
+
+  .heroTitle {
+    font-size: clamp(4rem, 18vw, 5.8rem);
+    line-height: 1.08;
+  }
+
+  .sectionHeader h2 {
+    font-size: 2.35rem;
+  }
+
+  .repertoireCard,
+  .videoCard,
+  .lessonCard {
+    border-radius: 1.55rem;
+  }
+}

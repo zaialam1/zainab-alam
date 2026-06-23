@@ -1,0 +1,447 @@
+@import url("https://fonts.googleapis.com/css2?family=Average&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Sacramento&display=swap");
+
+.page {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(246, 211, 101, 0.28), transparent 34rem),
+    radial-gradient(circle at top right, rgba(233, 138, 138, 0.16), transparent 30rem),
+    #fff7e8;
+  color: #333333;
+}
+
+/* HERO */
+
+.heroSection {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 4.8rem 2rem 4.5rem;
+}
+
+.heroContent {
+  text-align: center;
+  animation: fadeUp 0.8s ease both;
+}
+
+.kicker,
+.sectionKicker {
+  margin: 0 0 0.8rem;
+  color: #9f6a5f;
+  font-family: "Average", Georgia, serif;
+  font-size: 0.86rem;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  max-width: 980px;
+  margin: 0 auto 2.4rem;
+  color: #333333;
+  font-family: "Sacramento", cursive;
+  font-size: clamp(4.1rem, 10vw, 8.2rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.heroImageWrap {
+  position: relative;
+  max-width: 880px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  border: 1.5px solid rgba(245, 184, 149, 0.95);
+  border-radius: 2.2rem;
+  overflow: hidden;
+  background: #fffaf1;
+  box-shadow: 0 26px 62px rgba(108, 72, 57, 0.16);
+  transform: rotate(-1.1deg);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.heroImageWrap::before {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  z-index: 2;
+  border: 1px solid rgba(255, 247, 232, 0.72);
+  border-radius: 1.45rem;
+  pointer-events: none;
+}
+
+.heroImageWrap:hover {
+  transform: rotate(0deg) translateY(-5px);
+  border-color: rgba(233, 138, 138, 0.8);
+  box-shadow: 0 32px 72px rgba(108, 72, 57, 0.2);
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* SHARED SECTIONS */
+
+.aboutSection,
+.performancesSection,
+.lessonsSection,
+.tipsSection {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
+
+.sectionHeader {
+  margin-bottom: 1.8rem;
+  text-align: center;
+}
+
+.sectionHeader h2 {
+  margin: 0;
+  color: #333333;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+/* ABOUT */
+
+.aboutCard {
+  position: relative;
+  max-width: 940px;
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 3.2rem);
+  border: 1.5px solid rgba(245, 184, 149, 0.95);
+  border-radius: 2rem;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 241, 0.96), rgba(245, 184, 149, 0.17)),
+    #fffaf1;
+  box-shadow: 0 20px 48px rgba(108, 72, 57, 0.1);
+}
+
+.aboutCard::before {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  right: 2.4rem;
+  width: 6rem;
+  height: 1.6rem;
+  border: 1px solid rgba(245, 184, 149, 0.9);
+  border-radius: 999px;
+  background: rgba(246, 211, 101, 0.45);
+  transform: rotate(3deg);
+}
+
+.aboutCard p {
+  margin: 0;
+  color: rgba(51, 51, 51, 0.78);
+  font-family: "Average", Georgia, serif;
+  font-size: 1.04rem;
+  line-height: 1.9;
+}
+
+.aboutCard p + p {
+  margin-top: 1.25rem;
+}
+
+/* PERFORMANCES */
+
+.videoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.6rem;
+}
+
+.videoCard {
+  padding: 1rem;
+  border: 1.5px solid rgba(245, 184, 149, 0.9);
+  border-radius: 1.8rem;
+  background: rgba(255, 250, 241, 0.86);
+  box-shadow: 0 18px 42px rgba(108, 72, 57, 0.1);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.videoCard:nth-child(1),
+.videoCard:nth-child(4) {
+  transform: rotate(-0.8deg);
+}
+
+.videoCard:nth-child(2),
+.videoCard:nth-child(3) {
+  transform: rotate(0.8deg);
+}
+
+.videoCard:hover {
+  transform: translateY(-5px) rotate(0deg);
+  border-color: rgba(233, 138, 138, 0.85);
+  box-shadow: 0 24px 54px rgba(108, 72, 57, 0.15);
+}
+
+.videoFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(circle at top left, rgba(246, 211, 101, 0.24), transparent 12rem),
+    #333333;
+}
+
+.videoFrame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border: 1px solid rgba(255, 247, 232, 0.55);
+  border-radius: 1.25rem;
+  pointer-events: none;
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+.videoCard h3 {
+  margin: 0.95rem 0 0.2rem;
+  color: #333333;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+/* LESSONS */
+
+.lessonGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.lessonCard {
+  position: relative;
+  min-height: 230px;
+  padding: 1.6rem;
+  border: 1.5px solid rgba(245, 184, 149, 0.95);
+  border-radius: 1.8rem;
+  background:
+    radial-gradient(circle at top left, rgba(246, 211, 101, 0.34), transparent 9rem),
+    radial-gradient(circle at bottom right, rgba(233, 138, 138, 0.15), transparent 9rem),
+    #fffaf1;
+  box-shadow: 0 16px 38px rgba(108, 72, 57, 0.09);
+  overflow: hidden;
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease,
+    border-color 0.24s ease;
+}
+
+.lessonCard:nth-child(1) {
+  transform: rotate(-1deg);
+}
+
+.lessonCard:nth-child(2) {
+  transform: translateY(0.7rem);
+}
+
+.lessonCard:nth-child(3) {
+  transform: rotate(1deg);
+}
+
+.lessonCard:hover {
+  transform: translateY(-5px) rotate(0deg);
+  border-color: rgba(233, 138, 138, 0.8);
+  box-shadow: 0 22px 50px rgba(108, 72, 57, 0.14);
+}
+
+.lessonDecoration {
+  display: flex;
+  gap: 0.45rem;
+  margin-bottom: 1.6rem;
+}
+
+.lessonDecoration span {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 999px;
+  background: #f6d365;
+}
+
+.lessonDecoration span:nth-child(2) {
+  background: #f5b895;
+}
+
+.lessonDecoration span:nth-child(3) {
+  background: #e98a8a;
+}
+
+.lessonCard h3 {
+  margin: 0 0 0.65rem;
+  color: #333333;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.lessonCard p {
+  margin: 0;
+  color: rgba(51, 51, 51, 0.72);
+  font-family: "Average", Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* TIPS */
+
+.tipsCard {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 3.2rem);
+  border: 1.5px solid rgba(245, 184, 149, 0.95);
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at top left, rgba(246, 211, 101, 0.32), transparent 12rem),
+    radial-gradient(circle at bottom right, rgba(233, 138, 138, 0.16), transparent 12rem),
+    #fff4e8;
+  box-shadow: 0 22px 54px rgba(108, 72, 57, 0.12);
+}
+
+.tipsCard .sectionHeader {
+  margin-bottom: 1.3rem;
+}
+
+.tipsIntro {
+  max-width: 820px;
+  margin: 0 auto 2rem;
+  color: rgba(51, 51, 51, 0.76);
+  font-family: "Average", Georgia, serif;
+  font-size: 1.04rem;
+  line-height: 1.85;
+  text-align: center;
+}
+
+.tipsList {
+  display: grid;
+  gap: 1rem;
+}
+
+.tipItem {
+  padding: 1.25rem 1.35rem;
+  border: 1px solid rgba(245, 184, 149, 0.85);
+  border-radius: 1.35rem;
+  background: rgba(255, 247, 232, 0.76);
+  box-shadow: 0 10px 24px rgba(108, 72, 57, 0.07);
+}
+
+.tipItem h3 {
+  margin: 0 0 0.35rem;
+  color: #9f6a5f;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.tipItem p {
+  margin: 0;
+  color: rgba(51, 51, 51, 0.76);
+  font-family: "Average", Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .heroSection {
+    padding-top: 4rem;
+  }
+
+  .videoGrid,
+  .lessonGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .lessonCard,
+  .lessonCard:nth-child(1),
+  .lessonCard:nth-child(2),
+  .lessonCard:nth-child(3) {
+    transform: none;
+  }
+
+  .heroImageWrap {
+    border-radius: 1.7rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .heroSection,
+  .aboutSection,
+  .performancesSection,
+  .lessonsSection,
+  .tipsSection {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .heroTitle {
+    font-size: clamp(4rem, 18vw, 5.8rem);
+    line-height: 1.05;
+    margin-bottom: 1.8rem;
+  }
+
+  .heroImageWrap {
+    aspect-ratio: 4 / 5;
+  }
+
+  .sectionHeader h2 {
+    font-size: 2.35rem;
+  }
+
+  .aboutCard,
+  .tipsCard {
+    border-radius: 1.55rem;
+  }
+
+  .videoCard,
+  .videoCard:nth-child(1),
+  .videoCard:nth-child(2),
+  .videoCard:nth-child(3),
+  .videoCard:nth-child(4) {
+    transform: none;
+  }
+}

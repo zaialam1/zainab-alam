@@ -1,0 +1,477 @@
+@import url("https://fonts.googleapis.com/css2?family=Average&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Sacramento&display=swap");
+
+.page {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(246, 211, 101, 0.24), transparent 34rem),
+    radial-gradient(circle at top right, rgba(233, 138, 138, 0.16), transparent 30rem),
+    radial-gradient(circle at 50% 55%, rgba(245, 184, 149, 0.14), transparent 32rem),
+    #fff7e8;
+  color: #333333;
+  font-family: "Average", Georgia, serif;
+}
+
+/* HERO */
+
+.heroSection {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 5rem 2rem 2.5rem;
+}
+
+.heroInner {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  animation: fadeUp 0.8s ease both;
+}
+
+.heroInner::before {
+  content: "";
+  position: absolute;
+  top: -1.2rem;
+  left: 50%;
+  width: 5.5rem;
+  height: 5.5rem;
+  border: 1px solid rgba(245, 184, 149, 0.75);
+  border-radius: 999px;
+  transform: translateX(-50%) rotate(-10deg);
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.kicker {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 0.8rem;
+  color: #9f6a5f;
+  font-size: 0.84rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.title {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 1.5rem;
+  color: #333333;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(3rem, 8vw, 6.2rem);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: min(18rem, 60%);
+  height: 0.55rem;
+  margin: -0.25rem auto 0;
+  border-radius: 999px;
+  background: rgba(246, 211, 101, 0.62);
+  transform: rotate(-1deg);
+}
+
+.intro {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+  margin: 0 auto 1rem;
+  color: rgba(51, 51, 51, 0.82);
+  font-size: clamp(1.05rem, 2vw, 1.22rem);
+  line-height: 1.8;
+}
+
+/* REFLECTION */
+
+.reflectionSection {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1rem 2rem 3.5rem;
+}
+
+.reflectionCard {
+  position: relative;
+  padding: clamp(2rem, 5vw, 3.3rem);
+  border: 1.5px solid rgba(245, 184, 149, 0.75);
+  border-radius: 2rem;
+  background:
+    linear-gradient(135deg, rgba(255, 247, 232, 0.96), rgba(245, 184, 149, 0.18)),
+    #fff7e8;
+  box-shadow: 0 1.2rem 3rem rgba(159, 106, 95, 0.13);
+  transform: rotate(-0.35deg);
+}
+
+.reflectionCard::after {
+  content: "";
+  position: absolute;
+  right: 2rem;
+  bottom: -1.1rem;
+  width: 7.5rem;
+  height: 2.2rem;
+  border-radius: 999px;
+  background: rgba(246, 211, 101, 0.42);
+  filter: blur(0.2px);
+  transform: rotate(-4deg);
+}
+
+.softLabel {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 1rem;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid rgba(233, 138, 138, 0.28);
+  border-radius: 999px;
+  background: rgba(246, 211, 101, 0.28);
+  color: #8f5f55;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.reflectionCard p {
+  max-width: 780px;
+  margin: 0 0 1rem;
+  color: rgba(51, 51, 51, 0.82);
+  font-size: 1.08rem;
+  line-height: 1.78;
+}
+
+.reflectionCard p:last-child {
+  margin-bottom: 0;
+}
+
+/* CONTENT */
+
+.contentSection,
+.videoSection {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem;
+}
+
+.sectionHeader {
+  max-width: 720px;
+  margin-bottom: 2rem;
+}
+
+.sectionHeader h2,
+.videoIntro h2 {
+  margin: 0;
+  color: #333333;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.debateGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem;
+}
+
+.skillCard {
+  position: relative;
+  min-height: 19rem;
+  padding: 1.65rem;
+  border: 1.5px solid rgba(245, 184, 149, 0.8);
+  border-radius: 1.7rem;
+  background:
+    linear-gradient(180deg, rgba(255, 247, 232, 0.98), rgba(245, 184, 149, 0.18)),
+    #fff7e8;
+  box-shadow: 0 1rem 2.2rem rgba(159, 106, 95, 0.11);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.skillCard:nth-child(1) {
+  transform: rotate(-1deg);
+}
+
+.skillCard:nth-child(2) {
+  transform: translateY(0.6rem) rotate(0.7deg);
+}
+
+.skillCard:nth-child(3) {
+  transform: rotate(-0.4deg);
+}
+
+.skillCard:hover {
+  border-color: rgba(233, 138, 138, 0.68);
+  box-shadow: 0 1.4rem 2.8rem rgba(159, 106, 95, 0.16);
+}
+
+.skillCard:nth-child(1):hover {
+  transform: translateY(-0.4rem) rotate(-1deg);
+}
+
+.skillCard:nth-child(2):hover {
+  transform: translateY(0.2rem) rotate(0.7deg);
+}
+
+.skillCard:nth-child(3):hover {
+  transform: translateY(-0.4rem) rotate(-0.4deg);
+}
+
+.cardNumber {
+  display: block;
+  margin-bottom: 1.2rem;
+  color: rgba(233, 138, 138, 0.82);
+  font-family: "Sacramento", cursive;
+  font-size: 2.35rem;
+  line-height: 1;
+}
+
+.skillCard h3,
+.approachCard h3 {
+  margin: 0 0 0.75rem;
+  color: #333333;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.skillCard p,
+.videoIntro p,
+.approachCard p,
+.spokenWordCard p {
+  margin: 0;
+  color: rgba(51, 51, 51, 0.78);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* VIDEO SECTION */
+
+.videoSection {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+}
+
+.videoIntro {
+  max-width: 720px;
+  margin-bottom: 2rem;
+}
+
+.videoIntro p {
+  margin-top: 1rem;
+  font-size: 1.06rem;
+}
+
+.videoLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: 1.6rem;
+  align-items: stretch;
+}
+
+.videoFrame {
+  position: relative;
+  overflow: hidden;
+  min-height: 34rem;
+  border: 1.5px solid rgba(245, 184, 149, 0.85);
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at top left, rgba(246, 211, 101, 0.24), transparent 14rem),
+    #333333;
+  box-shadow: 0 1.25rem 3rem rgba(159, 106, 95, 0.15);
+  transform: rotate(-0.45deg);
+}
+
+.videoFrame::before {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  border: 1px solid rgba(246, 211, 101, 0.42);
+  border-radius: 1.35rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 34rem;
+  border: 0;
+  background: #333333;
+}
+
+.sideColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.approachCard,
+.spokenWordCard {
+  border: 1.5px solid rgba(245, 184, 149, 0.8);
+  border-radius: 1.7rem;
+  background:
+    radial-gradient(circle at top right, rgba(246, 211, 101, 0.24), transparent 11rem),
+    rgba(255, 247, 232, 0.94);
+  box-shadow: 0 1rem 2.4rem rgba(159, 106, 95, 0.11);
+}
+
+.approachCard {
+  padding: 1.7rem;
+}
+
+.approachCard h3 {
+  margin-top: 1.2rem;
+}
+
+.approachCard h3:first-child {
+  margin-top: 0;
+}
+
+.approachCard p {
+  margin-bottom: 1rem;
+}
+
+.approachCard p:last-child {
+  margin-bottom: 0;
+}
+
+.spokenWordCard {
+  position: relative;
+  overflow: hidden;
+  padding: 1.7rem;
+  background:
+    linear-gradient(135deg, rgba(255, 247, 232, 0.98), rgba(233, 138, 138, 0.13)),
+    #fff7e8;
+}
+
+.spokenWordCard::before {
+  content: "voice";
+  position: absolute;
+  top: -1.35rem;
+  right: 1.4rem;
+  color: rgba(233, 138, 138, 0.28);
+  font-family: "Sacramento", cursive;
+  font-size: 3.8rem;
+  line-height: 1;
+  transform: rotate(-7deg);
+}
+
+.spokenWordCard h2 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 0.85rem;
+  color: #333333;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.95rem, 4vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.spokenWordCard .kicker {
+  margin-bottom: 0.75rem;
+}
+
+.spokenWordCard p {
+  position: relative;
+  z-index: 1;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .heroSection {
+    padding-top: 4rem;
+  }
+
+  .debateGrid,
+  .videoLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .skillCard,
+  .skillCard:nth-child(1),
+  .skillCard:nth-child(2),
+  .skillCard:nth-child(3),
+  .videoFrame {
+    transform: none;
+  }
+
+  .skillCard:nth-child(1):hover,
+  .skillCard:nth-child(2):hover,
+  .skillCard:nth-child(3):hover {
+    transform: translateY(-0.35rem);
+  }
+
+  .skillCard {
+    min-height: auto;
+  }
+
+  .videoFrame,
+  .video {
+    min-height: 22rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .heroSection,
+  .reflectionSection,
+  .contentSection,
+  .videoSection {
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+  }
+
+  .heroSection {
+    padding-top: 3.5rem;
+  }
+
+  .title {
+    font-size: clamp(2.8rem, 17vw, 4.5rem);
+  }
+
+  .intro {
+    font-size: 1rem;
+    line-height: 1.72;
+  }
+
+  .reflectionCard,
+  .approachCard,
+  .spokenWordCard {
+    border-radius: 1.5rem;
+  }
+
+  .videoFrame,
+  .video {
+    min-height: 18rem;
+  }
+
+  .spokenWordCard::before {
+    top: -1.15rem;
+    right: 1.2rem;
+    font-size: 3.2rem;
+  }
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
